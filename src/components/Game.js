@@ -38,36 +38,40 @@ class Game extends React.Component{
     }    
 
     render(){
-        const history = this.state.history;
-        const current = history[this.state.stepNumber];
-        const winner = calculateWinner(current.squares);
+      const history = this.state.history;
+      const current = history[this.state.stepNumber];
+      const winner = calculateWinner(current.squares);
 
-        const moves = history.map((step,move) => {
-            const desc = move ? 'Go to move #' + move : 'Go to game start';
-            return (
-                <li key={move}>
-                    <button onClick={() => this.jumpTo(move)}>{desc}</button>
-                </li>
-            );
-        });
+      const moves = history.map((step,move) => {
+          const desc = move ? 'Go to move #' + move : 'Go to game start';
+          return (
+              <li key={move}>
+                  <button onClick={() => this.jumpTo(move)}>{desc}</button>
+              </li>
+          );
+      });
 
-        let status; 
-        if(winner){
-            status = 'winner: ' + winner;
-        } else {
-            status =  'Next Player: ' + (this.state.xIsNext ? 'X' : 'O');
-        }
-        return(
-        <div>
-          <div>
-            <Board
+      let status; 
+      if(winner){
+          status = 'Winner: ' + winner;
+      } else {
+          status =  'Next Player: ' + (this.state.xIsNext ? 'X' : 'O');
+      }
+      return(
+        <div className="container">
+          <div className="row align-items-start row-content">
+            <div className="col-5 col-md">
+              {status}
+            </div>
+            <div className="col-7 col-md">
+              <Board
                 squares = {current.squares}
                 onClick = {(i) => this.handleClick(i)} 
-            />
-          </div>
-          <div>
-        <div>{status}</div>
-        <ol>{moves}</ol>
+              />    
+            </div>
+            <div className="col-12 col-sm-12 col-md">
+              {moves}
+            </div>
           </div>
         </div>
       );
