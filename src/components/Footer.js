@@ -14,8 +14,8 @@ const Footer = () => {
                     </div>
                     <div className="col-4 col-sm-5 align-self-center">
                         <div className="text-center">
-                            <a className="btn btn-social-icon btn-linkedin" href="https://www.linkedin.com/in/sheshanpatel23/"><i className="fa fa-linkedin"></i></a>
-                            <a className="btn btn-social-icon btn-github" href="https://github.com/sheshan23/Tic-Tac-Toe"><i className="fa fa-github"></i></a>
+                            <a className="btn btn-social-icon btn-linkedin" href="https://www.linkedin.com/in/sheshanpatel23/" target="_blank"><i className="fa fa-linkedin"></i></a>
+                            <a className="btn btn-social-icon btn-github" href="https://github.com/sheshan23/Tic-Tac-Toe" target="_blank"><i className="fa fa-github"></i></a>
                         </div>
                     </div>
                 </div>
